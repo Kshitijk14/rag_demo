@@ -1,0 +1,17 @@
+langchain
+langchain-community
+langchain-chroma
+langchain-huggingface
+langchain-ollama
+onnxruntime
+faiss-cpu
+pymupdf
+pytest
+pyyaml
+psutil
+sentence-transformers
+transformers 
+torch
+tiktoken
+# hf_xet
+huggingface_hub[hf_xet]
