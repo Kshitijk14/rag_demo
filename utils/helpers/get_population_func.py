@@ -2,15 +2,16 @@ import os
 import json
 import gc
 import traceback
+
 from tqdm import tqdm
 from pathlib import Path
 from typing import List
+
+from langchain.schema import Document
+from langchain_community.document_loaders import PyMuPDFLoader
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+
 from ..llm.get_llm_func import num_tokens
-from utils.helpers.langchain_imports import (
-    Document,
-    PyMuPDFLoader,
-    RecursiveCharacterTextSplitter,
-)
 
 
 def load_docs(base_data_path: Path, logger) -> List[Document]:

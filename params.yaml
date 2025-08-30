@@ -1,8 +1,9 @@
 LOG_PATH: "logs"
-DATA_PATH: "data/"
+DATA_PATH: "artifacts/data/"
+FAISS_DIR: "artifacts/faiss"
+CHUNKS_OUT_PATH: "artifacts/faiss/chunks.jsonl"
 
-FAISS_DIR: "faiss"
-CHUNKS_OUT_PATH: "faiss/chunks.jsonl"
+QUERY_TEXT: "why do we use self-attention heads instead of single attention head in transformers?"
 
 CHUNK_SIZE: 512
 CHUNK_OVERLAP: 50

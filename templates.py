@@ -8,11 +8,11 @@ logging.basicConfig(level=logging.INFO, format='[%(asctime)s]: %(message)s:')
 project_name = "raget_use_case"
 
 list_of_files = [
-    "data/.gitkeep",
-    "faiss/chunks.jsonl",
+    "artifacts/data/.gitkeep",
+    "artifacts/faiss/chunks.jsonl",
 
-    "results/.gitkeep",
-    "outputs/.gitkeep",
+    "artifacts/results/.gitkeep",
+    "artifacts/outputs/.gitkeep",
 
     # pipeline
     "rag_pipeline/__init__.py",

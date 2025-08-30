@@ -1,10 +1,10 @@
 import tiktoken
+
 from ..config import CONFIG
-from utils.helpers.langchain_imports import (
-    HuggingFaceEmbeddings,
-    CrossEncoder,
-    OllamaLLM
-)
+
+from langchain_huggingface.embeddings import HuggingFaceEmbeddings
+from sentence_transformers import CrossEncoder
+from langchain_ollama import OllamaLLM
 
 
 ENCODING_MODEL = CONFIG["ENCODING_MODEL"]

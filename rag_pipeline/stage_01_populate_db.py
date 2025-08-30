@@ -2,9 +2,15 @@ import os
 import shutil
 import gc
 import traceback
+
 from pathlib import Path
+
 from utils.config import CONFIG
 from utils.logger import setup_logger
+
+from langchain.schema import Document
+from langchain_community.vectorstores import FAISS
+
 from utils.llm.get_llm_func import embedding_func
 from utils.helpers.get_population_func import (
     load_docs, 
@@ -16,16 +22,12 @@ from utils.helpers.get_population_func import (
     process_in_batches, 
     save_processed_chunks_metadata,
 )
-from utils.helpers.langchain_imports import (
-    Document,
-    FAISS
-)
+
 
 
 # configurations
 LOG_PATH = Path(CONFIG["LOG_PATH"])
 DATA_PATH = Path(CONFIG["DATA_PATH"])
-GROUPED_DIRS = CONFIG["GROUPED_DIRS"]
 
 FAISS_DIR = CONFIG["FAISS_DIR"]
 CHUNKS_OUT_PATH = Path(CONFIG["CHUNKS_OUT_PATH"])
@@ -172,7 +174,17 @@ def clear_chunks(chunks_dir):
         elif chunks_path.is_dir():
             shutil.rmtree(chunks_path)
 
-def run_populate_db(reset=False, faiss_db_dir=FAISS_DIR, base_data_path=DATA_PATH, chunks_dir=CHUNKS_OUT_PATH, chunk_size=CHUNK_SIZE, chunk_overlap=CHUNK_OVERLAP, lower_limit=CHUNK_LOWER_LIMIT, upper_limit=CHUNK_UPPER_LIMIT, ingest_batch_size=INGEST_BATCH_SIZE):
+def run_populate_db(
+    reset=False, 
+    faiss_db_dir=FAISS_DIR, 
+    base_data_path=DATA_PATH, 
+    chunks_dir=CHUNKS_OUT_PATH, 
+    chunk_size=CHUNK_SIZE, 
+    chunk_overlap=CHUNK_OVERLAP, 
+    lower_limit=CHUNK_LOWER_LIMIT, 
+    upper_limit=CHUNK_UPPER_LIMIT, 
+    ingest_batch_size=INGEST_BATCH_SIZE
+):
     try:
         logger = setup_logger("populate_db_logger", LOG_FILE)
         logger.info(" ")

@@ -1,0 +1,41 @@
+[
+    {
+        "question": "why do we use self-attention heads instead of single attention head in transformers?"
+    },
+    {
+        "question": "what is positional encoding and why is it needed?"
+    },
+    {
+        "question": "how does the transformer handle variable-length input sequences?"
+    },
+    {
+        "question": "how does multi-head self-attention improve upon single-head attention in the transformer?"
+    },
+    {
+        "question": "what are the computational advantages of the transformer over RNNs and CNNs?"
+    },
+    {
+        "question": "how is the scaled dot-product attention computed, and why is scaling necessary?"
+    },
+    {
+        "question": "how do residual connections and layer normalization contribute to the transformer’s performance?"
+    },
+    {
+        "question": "What are the differences between encoder and decoder blocks in the transformer?"
+    },
+    {
+        "question": "how does the masking mechanism in the decoder work to prevent information leakage?"
+    },
+    {
+        "question": "how does the transformer’s parallelization capability affect training speed and scalability?"
+    },
+    {
+        "question": "What are the limitations of the transformer architecture as discussed by the authors?"
+    },
+    {
+        "question": "how does the choice of hyper-parameters (e.g., number of heads, layers) affect model performance?"
+    },
+    {
+        "question": "how does the transformer perform on long sequences compared to traditional models?"
+    }
+]
