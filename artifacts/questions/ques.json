@@ -1,41 +1,54 @@
 [
     {
-        "question": "why do we use self-attention heads instead of single attention head in transformers?"
+        "question": "why do we use self-attention heads instead of single attention head in transformers?",
+        "answer": "Multi-head attention enables the model to jointly attend to information from different representation subspaces, whereas a single attention head inhibits this. This approach reduces computational cost by leveraging parallel processing across multiple attention heads. Additionally, multi-head attention better handles long-range dependencies by allowing collaborative attention across different positions in the input."
     },
     {
-        "question": "what is positional encoding and why is it needed?"
+        "question": "what is positional encoding and why is it needed?",
+        "answer": "Positional encoding is a technique used to give the model information about the position of tokens in the input sequence. Since transformers do not have a built-in notion of order, positional encodings are added to the input embeddings to provide this information. This allows the model to take into account the order of words when processing the input."
     },
     {
-        "question": "how does the transformer handle variable-length input sequences?"
+        "question": "how does the transformer handle variable-length input sequences?",
+        "answer": "The transformer handles variable-length input sequences by using a combination of padding and masking. Input sequences are padded to a fixed length, and attention masks are applied to ensure that the model only attends to the actual tokens and not the padding tokens."
     },
     {
-        "question": "how does multi-head self-attention improve upon single-head attention in the transformer?"
+        "question": "how does multi-head self-attention improve upon single-head attention in the transformer?",
+        "answer": "Multi-head self-attention allows the model to jointly attend to information from different representation subspaces, capturing a richer set of relationships in the data. By using multiple attention heads, the transformer can focus on different parts of the input sequence simultaneously, improving its ability to model complex dependencies."
     },
     {
-        "question": "what are the computational advantages of the transformer over RNNs and CNNs?"
+        "question": "what are the computational advantages of the transformer over RNNs and CNNs?",
+        "answer": "Transformers leverage parallelization, allowing for faster training on modern hardware. Unlike RNNs, which process sequences sequentially, transformers can process entire sequences at once. This, combined with their ability to capture long-range dependencies through self-attention, makes them more efficient and effective for many tasks."
     },
     {
-        "question": "how is the scaled dot-product attention computed, and why is scaling necessary?"
+        "question": "how is the scaled dot-product attention computed, and why is scaling necessary?",
+        "answer": "Scaled dot-product attention is computed by taking the dot product of the query and key vectors, scaling it by the square root of the dimension of the key vectors, and then applying a softmax function to obtain the attention weights. Scaling is necessary to prevent the dot product values from becoming too large, which can lead to extremely small gradients and hinder training."
     },
     {
-        "question": "how do residual connections and layer normalization contribute to the transformer’s performance?"
+        "question": "how do residual connections and layer normalization contribute to the transformer’s performance?",
+        "answer": "Residual connections help to mitigate the vanishing gradient problem by allowing gradients to flow through the network more easily. Layer normalization stabilizes the learning process by normalizing the inputs to each layer, which helps to improve convergence and overall performance."
     },
     {
-        "question": "What are the differences between encoder and decoder blocks in the transformer?"
+        "question": "What are the differences between encoder and decoder blocks in the transformer?",
+        "answer": "Encoder blocks process the input sequence and generate a continuous representation, while decoder blocks take this representation and generate the output sequence. Decoder blocks also include a masking mechanism to prevent attending to future tokens."
     },
     {
-        "question": "how does the masking mechanism in the decoder work to prevent information leakage?"
+        "question": "how does the masking mechanism in the decoder work to prevent information leakage?",
+        "answer": "The masking mechanism in the decoder works by applying a mask to the attention scores, ensuring that each position can only attend to earlier positions in the sequence. This prevents the model from 'seeing' future tokens during training, which helps to maintain the auto-regressive property of the decoder."
     },
     {
-        "question": "how does the transformer’s parallelization capability affect training speed and scalability?"
+        "question": "how does the transformer’s parallelization capability affect training speed and scalability?",
+        "answer": "The transformer's parallelization capability allows it to process multiple tokens simultaneously, significantly speeding up training times compared to sequential models like RNNs. This parallelization also makes it easier to scale the model to larger datasets and more complex tasks."
     },
     {
-        "question": "What are the limitations of the transformer architecture as discussed by the authors?"
+        "question": "What are the limitations of the transformer architecture as discussed by the authors?",
+        "answer": "Some limitations of the transformer architecture include its high memory consumption, especially for long sequences, and the need for large amounts of training data. Additionally, transformers may struggle with tasks that require deep understanding of sequential information or long-term dependencies."
     },
     {
-        "question": "how does the choice of hyper-parameters (e.g., number of heads, layers) affect model performance?"
+        "question": "how does the choice of hyper-parameters (e.g., number of heads, layers) affect model performance?",
+        "answer": "The choice of hyper-parameters such as the number of attention heads and layers can significantly impact the model's performance. More heads allow the model to focus on different parts of the input simultaneously, while deeper architectures can capture more complex patterns. However, increasing these parameters also raises the computational cost and risk of overfitting."
     },
     {
-        "question": "how does the transformer perform on long sequences compared to traditional models?"
+        "question": "how does the transformer perform on long sequences compared to traditional models?",
+        "answer": "The transformer architecture is generally more effective than traditional models like RNNs on long sequences due to its self-attention mechanism, which allows it to capture long-range dependencies without the limitations of sequential processing. This enables transformers to maintain performance even as sequence length increases."
     }
 ]

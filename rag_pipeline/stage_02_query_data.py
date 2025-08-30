@@ -172,18 +172,16 @@ def run_query_rag(query: str, faiss_db_dir=FAISS_DIR, at_k=K, at_r=R) -> str:
         logger.info(" ")
         logger.info("#--#--FINAL RESULTS:--#--#")
         logger.info(" ")
-        logger.info(f"[Stage 02] Query: {query}")
-        logger.info(" ")
-        logger.info(f"[Stage 02] LLM's response: {results['llms_response']}")
-        logger.info(" ")
-        logger.info(f"[Stage 02] Sources: {results['sources']}")
-        logger.info(" ")
-        logger.info(f"[Stage 02] Context: {results['context']}")
-        logger.info(" ")
-        logger.debug(f"[Stage 02] Retrieved Docs: {results['results']}")
-        logger.debug(f"[Stage 02] Reranked Retrieved Docs: {results['rereranked_results']}")
-        logger.debug(f"[Stage 02] Graded Re-ranked Retrieved Docs: {results['graded_results']}")
-        logger.info(" ")
+        logger.info(f"[Stage 02] Query: \n{query}")
+        
+        logger.info(f"[Stage 02] Sources: \n{results['sources']}")
+        # logger.info(f"[Stage 02] Context: \n{results['context']}")
+        
+        logger.info(f"[Stage 02] \nLLM's response: \n{results['llms_response']}\n")
+        
+        # logger.debug(f"[Stage 02] Retrieved Docs: \n{results['results']}")
+        # logger.debug(f"[Stage 02] Reranked Retrieved Docs: \n{results['rereranked_results']}")
+        # logger.debug(f"[Stage 02] Graded Re-ranked Retrieved Docs: \n{results['graded_results']}")
         
         logger.info("++++++++Querying, Retrieval Grading, & Generation stage completed successfully.")
         logger.info(" ")

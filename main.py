@@ -28,7 +28,7 @@ def main():
     
     try:
         logger.info(" ")
-        logger.info("////--//--//----STARTING [PIPELINE 02] RAG PIPELINE----//--//--////")
+        logger.info("////--//--//----STARTING [PIPELINE 01] RAG PIPELINE----//--//--////")
         
         try:
             logger.info(" ")
@@ -55,10 +55,10 @@ def main():
             logger.debug(traceback.format_exc())
             return
         
-        logger.info("////--//--//----FINISHED [PIPELINE 02] RAG PIPELINE----//--//--////")
+        logger.info("////--//--//----FINISHED [PIPELINE 01] RAG PIPELINE----//--//--////")
         logger.info(" ")
     except Exception as e:
-        logger.error(f"ERROR RUNNING [PIPELINE 02] RAG PIPELINE: {e}")
+        logger.error(f"ERROR RUNNING [PIPELINE 01] RAG PIPELINE: {e}")
         logger.debug(traceback.format_exc())
         return
 

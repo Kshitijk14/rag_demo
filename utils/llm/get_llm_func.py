@@ -61,7 +61,6 @@ def llm_func(prompt):
 def llm_gen_func(prompt):
     llm = OllamaLLM(
         model=LOCAL_LLM,
-        # format="json",
         temperature=0.1,
         max_tokens=512,
         # streaming=True,
